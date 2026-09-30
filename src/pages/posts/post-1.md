@@ -1,28 +1,19 @@
 ---
 layout: ../../components/MarkdownPost.astro
-title: "Warren Buffett’s Seven Rules: An Economic Masterclass in Value Investing"
+title: "feat: shuffle question ordering to reduce copying in Avanti Fellows Quizzing Engine"
+externalUrl: "https://techatavanti.substack.com/p/featshuffle-question-ordering-to"
 author: 
-  name: "Jessica Stillman"
-  url: "https://images.pexels.com/photos/935743/pexels-photo-935743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  name: "Hemanth Reddy"
+  url: "https://github.com/anthonylan"
 image:
-  url: "https://images.pexels.com/photos/313690/pexels-photo-313690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-  alt: "xx"
-tags: [""]
-pubDate: 'Feb 09, 2025'
-likes: '12.3k'
-comments: '119'
+  url: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  alt: "Avanti Fellows Quizzing Engine"
+tags: ["Open Source", "Substack", "VueJS", "Python"]
+pubDate: 'Oct 2024'
+likes: '45'
+comments: '12'
 ---
 
+Improved question shuffling feature end-to-end (planning, development, testing, docs) to reduce copying in the open-source test prep platform serving over 90,000+ students.
 
-Look around at social media, politics, or the news and you’re likely to agree with the bodybuilding champ-turned-movie star-turned-governor of California.
-
-Whether he was lifting weights for five hours a day or trying to hack a path through the thicket of California politics, Schwarzenegger claims he was consistently happy. What allowed him to maintain a positive outlook despite personal setbacks and tough jobs? In his book Be Useful, Schwarzenegger boils down his philosophy to just four words.
-
-
-You might think a simple mantra is too flimsy a thing to be actually meaningful in the face of real-life struggle. But according to top psychologists, the Governator actually manages to capture profound truths about human flourishing in one quick motto.
-
-
-
-
-
-
+[Read on Substack](https://techatavanti.substack.com/p/featshuffle-question-ordering-to)

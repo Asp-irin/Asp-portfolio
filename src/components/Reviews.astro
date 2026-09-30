@@ -42,19 +42,19 @@ const testimonials = [
 ---
 
 
-<section>
-    <div class="max-w-4xl mx-auto pb-20 px-10 overflow-hidden">
+<section class="py-20 md:py-28">
+  <div class="max-w-4xl mx-auto px-10 overflow-hidden">
       <div class="grid grid-cols-1 md:grid-cols-2">
         <div class="flex relative">
           <h1 class="text-3xl">Here’s what my clients are saying about my work</h1>
-          <img src={svgNew.src} alt="arrow" width="40" class="absolute -right-3 md:-right-10 bottom-0" />
+          <img src={svgNew.src} alt="arrow" width="40" class="theme-arrow absolute -right-3 md:-right-10 bottom-0" />
         </div>
       </div>
   
   
-      <div class="grid grid-cols-1 md:grid-cols-2 py-30">
+      <div class="grid grid-cols-1 md:grid-cols-2 py-16 md:py-24">
         {testimonials.map(item => ( 
-          <div class={`flex flex-col gap-3 p-5 pr-15 bg-white border-2 shadow-[6px_6px_0px_rgba(0,0,0,0.3)] ${item.cls}`}>
+          <div class={`flex flex-col gap-3 p-5 pr-15 bg-[var(--surface)] text-[var(--surface-text)] border-2 border-[var(--surface-text)] shadow-[6px_6px_0px_var(--shadow)] ${item.cls}`}>
             <p>{item.comment}</p>
             <div class="flex items-center gap-2">
               <div><div class="size-11 rounded-full border overflow-hidden">

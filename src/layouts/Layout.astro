@@ -4,8 +4,16 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Angie Portfolio</title>
+		<meta name="description" content="Puneti Hemanth Kumar Reddy - Software Engineer & Open Source Contributor. Portfolio featuring work experience at Ocrolus & Publicis Sapient, open-source projects, and technical writings." />
+		<meta name="author" content="Puneti Hemanth Kumar Reddy" />
+		<meta property="og:title" content="Hemanth Reddy | Software Engineer Portfolio" />
+		<meta property="og:description" content="Software Engineer @ Ocrolus, Open Source Contributor, B.Tech CSE @ IIT Bhilai." />
+		<meta property="og:type" content="website" />
+		<script is:inline>
+			const savedTheme = localStorage.getItem('portfolio-theme');
+			document.documentElement.dataset.theme = savedTheme === 'ink' ? 'ink' : 'paper';
+		</script>
+		<title>Asp-irin</title>
 	</head>
 	<body>
 		<slot />
@@ -18,6 +26,36 @@
 	--main-bg: #FEFFF0;
 	--blue: #BAE6FF;
 	--yellow: #FFDC58;
+	--surface: #FFFFFF;
+	--surface-text: #000000;
+	--ink: #000000;
+	--photo-border: #000000;
+	--tool-text: #FFFFFF;
+	--shadow: rgba(0,0,0,0.3);
+}
+
+:root[data-theme='paper'] {
+	--main-bg: #F7F7F4;
+	--blue: #DDFE00;
+	--yellow: #DDFE00;
+	--surface: #FFFFFF;
+	--surface-text: #171717;
+	--ink: #171717;
+	--photo-border: #171717;
+	--tool-text: #FFFFFF;
+	--shadow: rgba(0,0,0,0.9);
+}
+
+:root[data-theme='ink'] {
+	--main-bg: #111111;
+	--blue: #DDFE00;
+	--yellow: #DDFE00;
+	--surface: #FFFFFF;
+	--surface-text: #111111;
+	--ink: #FFFFFF;
+	--photo-border: #FFFFFF;
+	--tool-text: #111111;
+	--shadow: rgba(255,255,255,0.55);
 }
 
 html,
@@ -26,9 +64,9 @@ body {
 	width: 100%;
 	height: 100%;
 	background-color: var(--main-bg);
+	color: var(--ink);
 	font-family: "Space Grotesk", sans-serif;
 	scroll-behavior: smooth;
 }
-
 
 </style>

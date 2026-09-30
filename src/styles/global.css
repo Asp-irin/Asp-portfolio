@@ -5,4 +5,13 @@
 
 @import "tailwindcss";
 
+.theme-art path {
+	fill: var(--ink);
+}
+
+:root[data-theme='ink'] .theme-arrow,
+:root[data-theme='ink'] .theme-hl {
+	filter: invert(1);
+}
+
 
