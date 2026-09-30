@@ -1,9 +1,42 @@
 ---
-const experience = [
-  { period: 'Jun 2026 — Present', company: 'Ocrolus', role: 'Software Engineer', detail: 'Leading frontend development for Detect, building tamper-evidence workflows and improving document-fraud signals across React and Python gRPC services.', tags: ['React', 'Python', 'gRPC'] },
-  { period: 'Aug 2025 — Jun 2026', company: 'Ocrolus', role: 'Software Engineering Intern', detail: 'Built workflow tooling, Forms Management Service, and Nights Watch, a dashboard for debugging Flowable processes through DLQ inspection.', tags: ['React', 'Java', 'Prometheus', 'Grafana'] },
-  { period: 'May 2025 — Jun 2025', company: 'Publicis Sapient', role: 'Associate Software Development Intern', detail: 'Developed natural-language order search with Gemini and a PWA preview tool for real-time storefront testing.', tags: ['SFCC', 'Gemini', 'PWA'] },
-  { period: 'Sep 2024 — Present', company: 'FoSS Club, IIT Bhilai', role: 'Open Source Community Lead', detail: 'Leading an open source community under FOSS United India and helping students contribute to public projects.', tags: ['Open Source', 'Community', 'Leadership'] },
+import researchIcon from '../assets/services/research.svg'
+import wireIcon from '../assets/services/wire.svg'
+import uiIcon from '../assets/services/ui.svg'
+import protoIcon from '../assets/services/proto.svg'
+
+import svgPinkStar from '../assets/pink-star.svg'
+
+const stats = [
+  { name: `Merged PRs in Open Source`, value: '8+' },
+  { name: `Students Served`, value: '90,000+' },
+  { name: `Unique Open Source Projects`, value: '4+' },
+]
+
+const services = [
+  {
+     name: `SigNoz`,
+     desc: `Fixed data fetching in infrastructure metrics to use dot notation for OS-type metrics`,
+     skills: ['React', 'TypeScript', 'Go'],
+     icon: researchIcon
+  },
+  {
+     name: `Avanti Fellows`,
+     desc: `Engineered question shuffling feature, copy-paste restrictions & UX optimizations serving 90,000+ students`,
+     skills: ['Vue.js', 'Python', 'MongoDB'],
+     icon: wireIcon
+  },
+  {
+     name: `AMRIT by PSMRI`,
+     desc: `Authored comprehensive local development environment setup & dev tooling for digital public health`,
+     skills: ['Docker', 'DevOps', 'Node.js'],
+     icon: uiIcon
+  },
+  {
+     name: `PlanetRead`,
+     desc: `Built Video Watch Timer features to track user engagement and video watch analytics for literacy apps`,
+     skills: ['JavaScript', 'React', 'CSS'],
+     icon: protoIcon
+  },
 ]
 
 const skillGroups = [
@@ -14,64 +47,161 @@ const skillGroups = [
   { name: 'AI & Open Source', skills: ['AI Evals', 'RAG', 'Fine-tuning', 'Open Source'] },
 ]
 
+const experience = [
+  { period: 'Jun 2026 — Present', company: 'Ocrolus', role: 'Software Engineer', detail: 'Leading frontend development for Detect, building tamper-evidence workflows and improving document-fraud signals across React and Python gRPC services.', tags: ['React', 'Python', 'gRPC'] },
+  { period: 'Aug 2025 — Jun 2026', company: 'Ocrolus', role: 'Software Engineering Intern', detail: 'Built workflow tooling, Forms Management Service, and Nights Watch, a dashboard for debugging Flowable processes through DLQ inspection.', tags: ['React', 'Java', 'Prometheus', 'Grafana'] },
+  { period: 'May 2025 — Jun 2025', company: 'Publicis Sapient', role: 'Associate Software Development Intern', detail: 'Developed natural-language order search with Gemini and a PWA preview tool for real-time storefront testing.', tags: ['SFCC', 'Gemini', 'PWA'] },
+  { period: 'Sep 2024 — Present', company: 'FoSS Club, IIT Bhilai', role: 'Open Source Community Lead', detail: 'Leading an open source community under FOSS United India and helping students contribute to public projects.', tags: ['Open Source', 'Community', 'Leadership'] },
+]
+
+const talksAndConferences = [
+  {
+    type: 'Talk (1 given so far)',
+    title: 'GSoC 101 @ IIT Bhilai',
+    organizer: 'OpenLake IIT Bhilai',
+    date: '2026',
+    detail: 'Hosted an interactive session discussing open source contributions, GSoC insights, AI-assisted development, Mentimeter live polls, and learning from failure ("Consistency beats one-day motivation").',
+    link: 'https://lnkd.in/p/gWQ66ggj',
+    tags: ['Speaker', 'GSoC', 'Open Source', 'IIT Bhilai']
+  },
+  {
+    type: 'Conference (1 attended so far)',
+    title: "India FOSS '26",
+    organizer: 'FOSS United',
+    date: '2026',
+    detail: "Attended India FOSS by FOSS United! Caught up with the @OpenLakeClub family, had an inspiring chat with Kailash Nadh (CTO at Zerodha), and connected with open source maintainers.",
+    link: 'https://x.com/Hemanth_Asp/status/2104571457238184061?s=20',
+    tags: ['India FOSS', 'FOSS United', 'OpenLake']
+  }
+]
 ---
 
-
-<section class="relative px-3 py-20 md:py-28 md:px-10 overflow-hidden" id="skills">
-  <div class="max-w-4xl mx-auto">
-    <div class="skills-heading">
-      <p class="experience-kicker">The tools I work with</p>
-      <h1 class="text-4xl md:text-5xl">Skills I use to build useful things</h1>
-    </div>
-
-    <div class="skills-grid">
-      {skillGroups.map(group => (
-        <div class="skill-group">
-          <h2 class="text-sm font-bold uppercase tracking-wide">{group.name}</h2>
-          <div class="flex flex-wrap gap-2 mt-3">
-            {group.skills.map(skill => <span class="skill-tag">{skill}</span>)}
+<section class="relative px-3 py-16 md:py-24 md:px-10 overflow-hidden">
+    <div class="max-w-4xl mx-auto space-y-24">
+      
+      <!-- Services & Impact Section -->
+      <div>
+        <div class="grid grid-cols-1 md:grid-cols-[60%_40%] py-6 relative">
+          <div class="flex items-end gap-3">
+            <h1 class="text-4xl md:text-5xl font-medium">Services &amp; Impact I deliver</h1>
+            <svg class="size-16 shrink-0 theme-art" viewBox="0 0 37 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.5479 4.4031C18.6713 5.80238 19.9271 9.81219 21.7001 11.2897C23.0602 12.3947 24.0665 11.888 24.3315 9.94798C24.6359 7.90326 23.1377 5.00064 21.4323 4.27109C20.1328 3.70088 19.9764 3.72964 19.5479 4.4031Z" fill="black"/>
+              <path d="M7.84038 5.33376C6.96374 6.73304 8.21957 10.7429 9.99262 12.2204C11.3527 13.3254 12.359 12.8186 12.624 10.8786C12.9284 8.83392 11.4302 5.9313 9.72476 5.20175C8.42528 4.63154 8.26883 4.66031 7.84038 5.33376Z" fill="black"/>
+              <path d="M2.88193 16.7075C3.24136 18.9226 7.35405 23.0018 11.0101 24.7375C12.1376 25.3003 14.0826 25.7031 15.8021 25.7769C18.5025 25.8751 18.8859 25.7851 22.3741 24.1786C25.7215 22.637 26.2387 22.2689 27.844 20.4042C29.889 17.9907 31.8424 12.8058 31.2223 11.3601C30.6796 10.095 29.8918 10.7176 28.3133 13.8252C26.5656 17.2272 25.5918 18.4981 23.558 19.9541C21.6144 21.3254 17.9796 22.3934 15.6935 22.2776C12.9776 22.1433 7.87127 19.3874 5.0947 16.5541C3.68105 15.1275 2.64514 15.1717 2.88193 16.7075Z" fill="black"/>
+            </svg>
           </div>
         </div>
-      ))}
-    </div>
-
-    <div id="experience">
-    <div class="experience-heading">
-      <p class="experience-kicker">A short timeline</p>
-      <h1 class="text-4xl md:text-5xl">Experience that shaped how I build</h1>
-    </div>
-
-    <div class="experience-timeline">
-      {experience.map((item, index) => (
-        <article class:list={["experience-item", { "experience-item--even": index % 2 === 1 }]}>
-          <div class="experience-marker" aria-hidden="true"></div>
-          <div class="experience-period">{item.period}</div>
-          <div class="experience-card">
-            <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-              <h2 class="text-2xl font-medium">{item.company}</h2>
-              <p class="experience-role">{item.role}</p>
-            </div>
-            <p class="mt-3 leading-relaxed">{item.detail}</p>
-            <div class="flex flex-wrap gap-2 mt-4">
-              {item.tags.map(tag => <span class="experience-tag">{tag}</span>)}
-            </div>
+    
+        <div class="grid grid-cols-1 md:grid-cols-[35%_65%] border-t-2 border-[var(--ink)]">
+          <div class="flex flex-col border-l-2 border-r-2 border-[var(--ink)] md:border-b-2 md:border-r-0 md:border-l-0">
+            {stats.map(item => ( 
+              <div class="flex flex-col p-4 md:p-6 border-b-2 border-[var(--ink)] last:border-none transition-colors duration-200 hover:bg-[var(--surface)] hover:text-[var(--surface-text)]">
+                <h1 class="text-3xl font-bold">{item.value}</h1>
+                <p class="text-sm font-medium mt-1">{item.name}</p>
+              </div>
+            ))}
           </div>
-        </article>
-      ))}
+          <div class="grid grid-cols-1 sm:grid-cols-2 border-r-2 border-t-2 border-[var(--ink)] md:border-r-0 md:border-t-0">
+            {services.map(item => ( 
+             <div class="flex flex-col gap-2 p-5 md:p-6 border-l-2 border-b-2 border-[var(--ink)] transition-all duration-200 hover:bg-[var(--surface)] hover:text-[var(--surface-text)]">
+               <img src={item.icon.src} width="40" alt="" class="theme-art" />
+               <h3 class="text-xl font-medium">{item.name}</h3>
+               <p class="text-sm leading-relaxed opacity-85">{item.desc}</p>
+             </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills Section -->
+      <div id="skills">
+        <div class="skills-heading">
+          <p class="experience-kicker">The tools I work with</p>
+          <h1 class="text-4xl md:text-5xl font-medium">Skills I use to build useful things</h1>
+        </div>
+
+        <div class="skills-grid mt-6">
+          {skillGroups.map(group => (
+            <div class="skill-group">
+              <h2 class="text-sm font-bold uppercase tracking-wide">{group.name}</h2>
+              <div class="flex flex-wrap gap-2 mt-3">
+                {group.skills.map(skill => <span class="skill-tag">{skill}</span>)}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Experience Section -->
+      <div id="experience">
+        <div class="experience-heading">
+          <p class="experience-kicker">A short timeline</p>
+          <h1 class="text-4xl md:text-5xl font-medium">Experience that shaped how I build</h1>
+        </div>
+
+        <div class="experience-timeline">
+          {experience.map((item, index) => (
+            <article class:list={["experience-item", { "experience-item--even": index % 2 === 1 }]}>
+              <div class="experience-marker" aria-hidden="true"></div>
+              <div class="experience-period">{item.period}</div>
+              <div class="experience-card">
+                <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                  <h2 class="text-2xl font-medium">{item.company}</h2>
+                  <p class="experience-role">{item.role}</p>
+                </div>
+                <p class="mt-3 leading-relaxed">{item.detail}</p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  {item.tags.map(tag => <span class="experience-tag">{tag}</span>)}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <!-- Talks & Conferences Section -->
+      <div id="talks">
+        <div class="experience-heading">
+          <p class="experience-kicker">Community &amp; Knowledge Sharing</p>
+          <h1 class="text-4xl md:text-5xl font-medium">Talks &amp; Conferences</h1>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          {talksAndConferences.map(item => (
+            <div class="border-2 border-[var(--surface-text)] p-6 bg-[var(--surface)] text-[var(--surface-text)] shadow-[6px_6px_0px_var(--shadow)] flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 hover:shadow-[10px_10px_0px_var(--shadow)]">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider px-2 py-1 bg-[var(--yellow)] text-[#111111] inline-block mb-3 border border-[var(--surface-text)]">{item.type}</span>
+                <h2 class="text-2xl font-medium">{item.title}</h2>
+                <p class="text-sm font-semibold opacity-75 mt-1">{item.organizer} • {item.date}</p>
+                <p class="mt-3 leading-relaxed text-sm">{item.detail}</p>
+              </div>
+              <div class="mt-6 flex items-center justify-between">
+                <div class="flex flex-wrap gap-2">
+                  {item.tags.map(tag => <span class="experience-tag">{tag}</span>)}
+                </div>
+                {item.link && (
+                  <a href={item.link} target="_blank" class="text-sm font-bold underline flex items-center gap-1 hover:opacity-80">
+                    View Post <i class="ri-arrow-right-up-line"></i>
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
     </div>
-    </div>
-  </div>
 </section>
 
 <style>
-  .skills-heading { max-width: 34rem; margin-bottom: 2rem; }
-  .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: 6rem; border-top: 2px solid var(--ink); border-left: 2px solid var(--ink); }
+  .skills-heading { max-width: 34rem; }
+  .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 2px solid var(--ink); border-left: 2px solid var(--ink); }
   .skill-group { border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); padding: 1.25rem; transition: background-color 0.2s ease; }
   .skill-tag { border: 1px solid var(--ink); padding: 0.25rem 0.6rem; font-size: 0.8rem; font-weight: 500; transition: all 0.2s ease; cursor: default; display: inline-block; }
   .skill-tag:hover { background-color: var(--yellow); color: #111111; transform: translateY(-1px); }
-  .experience-heading { max-width: 34rem; margin-bottom: 4rem; }
+  .experience-heading { max-width: 34rem; }
   .experience-kicker { margin-bottom: 0.75rem; color: var(--surface-text); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; }
-  .experience-timeline { position: relative; }
+  .experience-timeline { position: relative; margin-top: 2rem; }
   .experience-timeline::before { position: absolute; top: 0.5rem; bottom: 0.5rem; left: 0.3rem; width: 2px; background: var(--ink); content: ''; opacity: 0.7; }
   .experience-item { position: relative; display: grid; grid-template-columns: 7rem 1fr; gap: 1.5rem; padding-bottom: 2.5rem; padding-left: 1.5rem; }
   .experience-marker { position: absolute; top: 0.3rem; left: 0; width: 0.65rem; height: 0.65rem; border: 2px solid var(--ink); background: var(--yellow); transition: transform 0.2s ease; }
@@ -98,8 +228,7 @@ const skillGroups = [
   }
 
   @media (max-width: 767px) {
-    .skills-grid { grid-template-columns: 1fr; margin-bottom: 4rem; }
-    .experience-heading { margin-bottom: 2.5rem; }
+    .skills-grid { grid-template-columns: 1fr; }
     .experience-item { grid-template-columns: 1fr; gap: 0.5rem; }
   }
 </style>
