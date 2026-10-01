@@ -1,19 +1,63 @@
+---
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = "Hemanth Reddy — Software Engineer & Developer Advocate",
+	description = "Hemanth Reddy is a software engineer, open source contributor and working on AI evaluations, developer tools and reliable software."
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, "https://asp-irin.pages.dev/");
+const ogImage = "https://asp-irin.pages.dev/hemanth.jpeg";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="description" content="Puneti Hemanth Kumar Reddy - Software Engineer & Open Source Contributor. Portfolio featuring work experience at Ocrolus & Publicis Sapient, open-source projects, and technical writings." />
-		<meta name="author" content="Puneti Hemanth Kumar Reddy" />
-		<meta property="og:title" content="Hemanth Reddy | Software Engineer Portfolio" />
-		<meta property="og:description" content="Software Engineer @ Ocrolus, Open Source Contributor, B.Tech CSE @ IIT Bhilai." />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="author" content="Hemanth Reddy" />
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- OpenGraph / Facebook / WhatsApp -->
 		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@Hemanth_Asp" />
+		<meta name="twitter:creator" content="@Hemanth_Asp" />
+		<meta name="twitter:url" content={canonicalURL} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+
+		<!-- Structured Data (JSON-LD) -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Hemanth Reddy",
+			"url": "https://asp-irin.pages.dev/",
+			"jobTitle": "Software Engineer",
+			"sameAs": [
+				"https://github.com/Asp-irin",
+				"https://www.linkedin.com/in/hemanth-kumar-reddy-89668b252/",
+				"https://x.com/Hemanth_Asp"
+			]
+		})} />
+
 		<script is:inline>
 			const savedTheme = localStorage.getItem('portfolio-theme');
 			document.documentElement.dataset.theme = savedTheme === 'ink' ? 'ink' : 'paper';
 		</script>
-		<title>Asp-irin</title>
 	</head>
 	<body>
 		<slot />

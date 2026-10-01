@@ -15,7 +15,7 @@ const stats = [
 const services = [
   {
      name: `SigNoz`,
-     desc: `Fixed data fetching in infrastructure metrics to use dot notation for OS-type metrics`,
+     desc: `Fixed data fetching in infrastructure metrics to use dot notation for OS-type metrics (PR #9883)`,
      skills: ['React', 'TypeScript', 'Go'],
      icon: researchIcon
   },
@@ -57,21 +57,21 @@ const experience = [
 const talksAndConferences = [
   {
     type: 'Talk (1 given so far)',
-    title: 'GSoC 101 @ IIT Bhilai',
+    title: 'Open Source & GSoC 101 @ IIT Bhilai',
     organizer: 'OpenLake IIT Bhilai',
-    date: '2026',
+    date: '2024',
     detail: 'Hosted an interactive session discussing open source contributions, GSoC insights, AI-assisted development, Mentimeter live polls, and learning from failure ("Consistency beats one-day motivation").',
     link: 'https://lnkd.in/p/gWQ66ggj',
     tags: ['Speaker', 'GSoC', 'Open Source', 'IIT Bhilai']
   },
   {
     type: 'Conference (1 attended so far)',
-    title: "India FOSS '26",
+    title: "India FOSS '24",
     organizer: 'FOSS United',
-    date: '2026',
+    date: '2024',
     detail: "Attended India FOSS by FOSS United! Caught up with the @OpenLakeClub family, had an inspiring chat with Kailash Nadh (CTO at Zerodha), and connected with open source maintainers.",
     link: 'https://x.com/Hemanth_Asp/status/2104571457238184061?s=20',
-    tags: ['India FOSS', 'FOSS United', 'OpenLake']
+    tags: ['India FOSS', 'FOSS United', 'OpenLake', 'Community']
   }
 ]
 ---
@@ -79,11 +79,11 @@ const talksAndConferences = [
 <section class="relative px-3 py-16 md:py-24 md:px-10 overflow-hidden">
     <div class="max-w-4xl mx-auto space-y-24">
       
-      <!-- Services & Impact Section -->
-      <div>
+      <!-- Open Source Contributions Section -->
+      <div id="opensource">
         <div class="grid grid-cols-1 md:grid-cols-[60%_40%] py-6 relative">
           <div class="flex items-end gap-3">
-            <h1 class="text-4xl md:text-5xl font-medium">Services &amp; Impact I deliver</h1>
+            <h1 class="text-4xl md:text-5xl font-medium">Open Source Projects</h1>
             <svg class="size-16 shrink-0 theme-art" viewBox="0 0 37 35" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M19.5479 4.4031C18.6713 5.80238 19.9271 9.81219 21.7001 11.2897C23.0602 12.3947 24.0665 11.888 24.3315 9.94798C24.6359 7.90326 23.1377 5.00064 21.4323 4.27109C20.1328 3.70088 19.9764 3.72964 19.5479 4.4031Z" fill="black"/>
               <path d="M7.84038 5.33376C6.96374 6.73304 8.21957 10.7429 9.99262 12.2204C11.3527 13.3254 12.359 12.8186 12.624 10.8786C12.9284 8.83392 11.4302 5.9313 9.72476 5.20175C8.42528 4.63154 8.26883 4.66031 7.84038 5.33376Z" fill="black"/>
@@ -107,25 +107,44 @@ const talksAndConferences = [
                <img src={item.icon.src} width="40" alt="" class="theme-art" />
                <h3 class="text-xl font-medium">{item.name}</h3>
                <p class="text-sm leading-relaxed opacity-85">{item.desc}</p>
+               {item.skills && (
+                 <div class="flex flex-wrap gap-1.5 mt-2">
+                   {item.skills.map(skill => (
+                     <span class="text-xs px-2 py-0.5 border border-current font-semibold uppercase opacity-80 rounded-sm">{skill}</span>
+                   ))}
+                 </div>
+               )}
              </div>
             ))}
           </div>
         </div>
       </div>
 
-      <!-- Skills Section -->
-      <div id="skills">
-        <div class="skills-heading">
-          <p class="experience-kicker">The tools I work with</p>
-          <h1 class="text-4xl md:text-5xl font-medium">Skills I use to build useful things</h1>
+      <!-- Talks & Conferences Section -->
+      <div id="talks">
+        <div class="experience-heading">
+          <p class="experience-kicker">Community &amp; Knowledge Sharing</p>
+          <h1 class="text-4xl md:text-5xl font-medium">Talks &amp; Conferences</h1>
         </div>
 
-        <div class="skills-grid mt-6">
-          {skillGroups.map(group => (
-            <div class="skill-group">
-              <h2 class="text-sm font-bold uppercase tracking-wide">{group.name}</h2>
-              <div class="flex flex-wrap gap-2 mt-3">
-                {group.skills.map(skill => <span class="skill-tag">{skill}</span>)}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+          {talksAndConferences.map(item => (
+            <div class="border-2 border-[var(--surface-text)] p-6 bg-[var(--surface)] text-[var(--surface-text)] shadow-[6px_6px_0px_var(--shadow)] flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 hover:shadow-[10px_10px_0px_var(--shadow)]">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider px-2 py-1 bg-[var(--yellow)] text-[#111111] inline-block mb-3 border border-[var(--surface-text)]">{item.type}</span>
+                <h2 class="text-2xl font-medium">{item.title}</h2>
+                <p class="text-sm font-semibold opacity-75 mt-1">{item.organizer} • {item.date}</p>
+                <p class="mt-3 leading-relaxed text-sm">{item.detail}</p>
+              </div>
+              <div class="mt-6 flex items-center justify-between">
+                <div class="flex flex-wrap gap-2">
+                  {item.tags.map(tag => <span class="experience-tag">{tag}</span>)}
+                </div>
+                {item.link && (
+                  <a href={item.link} target="_blank" class="text-sm font-bold underline flex items-center gap-1 hover:opacity-80">
+                    View Post <i class="ri-arrow-right-up-line"></i>
+                  </a>
+                )}
               </div>
             </div>
           ))}
@@ -159,31 +178,19 @@ const talksAndConferences = [
         </div>
       </div>
 
-      <!-- Talks & Conferences Section -->
-      <div id="talks">
-        <div class="experience-heading">
-          <p class="experience-kicker">Community &amp; Knowledge Sharing</p>
-          <h1 class="text-4xl md:text-5xl font-medium">Talks &amp; Conferences</h1>
+      <!-- Skills Section -->
+      <div id="skills">
+        <div class="skills-heading">
+          <p class="experience-kicker">The tools I work with</p>
+          <h1 class="text-4xl md:text-5xl font-medium">Skills I use to build useful things</h1>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-          {talksAndConferences.map(item => (
-            <div class="border-2 border-[var(--surface-text)] p-6 bg-[var(--surface)] text-[var(--surface-text)] shadow-[6px_6px_0px_var(--shadow)] flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 hover:shadow-[10px_10px_0px_var(--shadow)]">
-              <div>
-                <span class="text-xs font-bold uppercase tracking-wider px-2 py-1 bg-[var(--yellow)] text-[#111111] inline-block mb-3 border border-[var(--surface-text)]">{item.type}</span>
-                <h2 class="text-2xl font-medium">{item.title}</h2>
-                <p class="text-sm font-semibold opacity-75 mt-1">{item.organizer} • {item.date}</p>
-                <p class="mt-3 leading-relaxed text-sm">{item.detail}</p>
-              </div>
-              <div class="mt-6 flex items-center justify-between">
-                <div class="flex flex-wrap gap-2">
-                  {item.tags.map(tag => <span class="experience-tag">{tag}</span>)}
-                </div>
-                {item.link && (
-                  <a href={item.link} target="_blank" class="text-sm font-bold underline flex items-center gap-1 hover:opacity-80">
-                    View Post <i class="ri-arrow-right-up-line"></i>
-                  </a>
-                )}
+        <div class="skills-grid mt-6">
+          {skillGroups.map(group => (
+            <div class="skill-group">
+              <h2 class="text-sm font-bold uppercase tracking-wide">{group.name}</h2>
+              <div class="flex flex-wrap gap-2 mt-3">
+                {group.skills.map(skill => <span class="skill-tag">{skill}</span>)}
               </div>
             </div>
           ))}

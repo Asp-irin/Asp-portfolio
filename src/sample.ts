@@ -1,12 +1,12 @@
 const author = {
-  name: `Puneti Hemanth Kumar Reddy`,
+  name: `Hemanth Reddy`,
   nickname: `Hemanth`,
-  tiktok: `https://www.tiktok.com`,
-  ig: `https://www.instagram.com`,
+  tiktok: `https://github.com/Asp-irin`,
+  ig: `https://www.linkedin.com/in/hemanth-kumar-reddy-89668b252/`,
   x: `https://x.com/Hemanth_Asp`,
   email: "mailto:punetihemanth@iitbhilai.ac.in",
   github: "https://github.com/Asp-irin",
-  linkedin: "https://www.linkedin.com",
+  linkedin: "https://www.linkedin.com/in/hemanth-kumar-reddy-89668b252/",
 };
 
 const buy = {
