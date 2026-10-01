@@ -1,17 +1,17 @@
 const author = {
   name: `Puneti Hemanth Kumar Reddy`,
-  nickname: `Asp-irin`,
+  nickname: `Hemanth`,
   tiktok: `https://www.tiktok.com`,
   ig: `https://www.instagram.com`,
-  x: `https://x.com`,
+  x: `https://x.com/Hemanth_Asp`,
   email: "mailto:punetihemanth@iitbhilai.ac.in",
-  github: "https://github.com",
+  github: "https://github.com/Asp-irin",
   linkedin: "https://www.linkedin.com",
 };
 
 const buy = {
   title: `See on Github`,
-  link: `https://github.com`,
+  link: `https://github.com/Asp-irin`,
 };
 
 const calendly = {
